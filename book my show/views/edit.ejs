@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #d4d4d4;
+    border-radius: 10px;
+    background-color: #f8fdf8;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+label {
+    display: block;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #2e7d32;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"],
+input[type="file"] {
+    width: 95%;
+    padding: 8px 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus,
+input[type="file"]:focus {
+    border-color: #43a047;
+    box-shadow: 0 0 5px rgba(67, 160, 71, 0.5);
+}
+
+button {
+    background-color: #43a047;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+img {
+    display: block;
+    border: 2px solid #43a047;
+    border-radius: 5px;
+}
+
+</style>
+<body>
+    <form action="/updateData" method="post" enctype="multipart/form-data">
+        <input type="text" value="<%= data.id %>"  name="id"  hidden>
+        
+        <label>Movie Name:</label>
+        <input type="text" name="movie" required value="<%= data.movie %>" ><br>
+        
+        <label>Release Date:</label>
+        <input type="date" name="date" value="<%= data.date %>"><br>
+        
+        <label>Rating:</label>
+        <input type="number" name="rate" value="<%= data.rate %>" ><br>
+        
+        <label>Language:</label>
+        <input type="text" name="lan" value="<%= data.lan %>"><br>
+        
+        <label>Image:</label>
+        <input type="file" name="image"><br>
+       
+        <img src="<%= data.image %>" style="width: 100px; height: 400px;"><br>
+        
+        <button type="submit">Update</button>
+    </form>
+    
+</body>
+</html>

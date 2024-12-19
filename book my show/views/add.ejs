@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid #ff9999; 
+    border-radius: 8px;
+    background-color: #ffe6e6; 
+    font-family: Arial, sans-serif;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #cc0000;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"],
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ff9999; 
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #fff5f5; 
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #ff6666; 
+    color: white; 
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+button:hover {
+    background-color: #e60000; 
+}
+
+input:focus {
+    outline: none;
+    border: 2px solid #ff4d4d; 
+    background-color: #ffe6e6; 
+}
+
+
+
+</style>
+<body>
+    <form action="/addData" method="post" enctype="multipart/form-data">
+        <label>Movie Name:</label>
+        <input type="text" name="movie" required><br>
+        
+        <label>Release Date:</label>
+        <input type="date" name="date"><br>
+        
+        <label>Rating:</label>
+        <input type="number" name="rate"  ><br>
+        
+        <label>Language:</label>
+        <input type="text" name="lan" ><br>
+        
+        <label>Image:</label>
+        <input type="file" name="image"><br>
+        
+        <button type="submit">Add Your Show</button>
+    </form>
+    
+</body>
+</html>
